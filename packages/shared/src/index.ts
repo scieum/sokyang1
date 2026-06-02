@@ -71,3 +71,6 @@ export const ROUTE_COLORS: Record<string, string> = {
   "7": "#16a34a",
   "9": "#dc2626",
 };
+
+// 백엔드 없이 동작하는 데모 피드 (정적 호스팅용)
+export * from "./demo.js";

@@ -4,6 +4,22 @@
 
 프로젝트 전반 기준은 [`CLAUDE.md`](./CLAUDE.md) 참고.
 
+## 🔗 라이브 데모 (GitHub Pages)
+
+배포 후 주소: **https://scieum.github.io/sokyang1/**
+
+> GitHub Pages 는 정적 호스팅이라 백엔드(WebSocket)가 없습니다. 이 경우 프론트엔드가
+> **데모 모드**로 자동 전환되어, 클라이언트에서 1·7·9번 버스를 모의로 움직입니다.
+> (헤더에 `◆ 데모 모드` 표시) 백엔드와 함께 띄우면 `● 실시간 연결됨` 으로 동작합니다.
+
+### Pages 활성화 (저장소 소유자 1회 설정)
+
+1. GitHub 저장소 → **Settings → Pages**
+2. **Build and deployment → Source** 를 **GitHub Actions** 로 선택
+3. 이후 `claude/vigilant-thompson-03qdy`(또는 `main`) 브랜치에 push 되면
+   `.github/workflows/deploy-pages.yml` 가 자동 빌드·배포합니다.
+   (Actions 탭에서 진행 상황 확인 가능)
+
 ## 구조 (모노레포 / npm workspaces)
 
 ```

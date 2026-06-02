@@ -3,7 +3,10 @@ import { defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
 
 // 개발 시 백엔드(기본 4000) 프록시 + PWA 설정
-export default defineConfig({
+// GitHub Pages(프로젝트 사이트)는 /sokyang1/ 하위 경로로 서빙되므로
+// 빌드 시에만 base 를 지정한다. (dev 는 루트 유지)
+export default defineConfig(({ command }) => ({
+  base: command === "build" ? "/sokyang1/" : "/",
   plugins: [
     react(),
     VitePWA({
@@ -15,10 +18,10 @@ export default defineConfig({
         theme_color: "#2563eb",
         background_color: "#ffffff",
         display: "standalone",
-        start_url: "/",
+        start_url: ".",
         icons: [
           {
-            src: "/icon.svg",
+            src: "icon.svg",
             sizes: "any",
             type: "image/svg+xml",
             purpose: "any maskable",
@@ -34,4 +37,4 @@ export default defineConfig({
       "/ws": { target: "ws://localhost:4000", ws: true },
     },
   },
-});
+}));
