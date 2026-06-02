@@ -1,0 +1,17 @@
+{
+  "name": "s-bus-link",
+  "version": "0.1.0",
+  "private": true,
+  "description": "속초시 중·고등학생 등·하교용 실시간 버스 정보 웹앱",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=apps/server & npm run dev --workspace=apps/web",
+    "dev:web": "npm run dev --workspace=apps/web",
+    "dev:server": "npm run dev --workspace=apps/server",
+    "build": "npm run build --workspace=apps/web && npm run build --workspace=apps/server",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  }
+}
